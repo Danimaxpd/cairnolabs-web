@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { JetBrains_Mono, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
@@ -16,6 +16,12 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
+
 export const metadata: Metadata = {
   title: "Cairno Labs — Quiet, Zero-Egress B2B Software Studio",
   description:
@@ -24,6 +30,20 @@ export const metadata: Metadata = {
     icon: "/favicon.svg",
   },
   metadataBase: new URL("https://cairnolabs.com"),
+  openGraph: {
+    type: "website",
+    url: "https://cairnolabs.com",
+    siteName: "Cairno Labs",
+    title: "Cairno Labs — Quiet, Zero-Egress B2B Software Studio",
+    description:
+      "Focused, zero-egress B2B software utilities built to last. First release: Cairno Docs for Confluence Cloud.",
+  },
+  twitter: {
+    card: "summary",
+    title: "Cairno Labs — Quiet, Zero-Egress B2B Software Studio",
+    description:
+      "Focused, zero-egress B2B software utilities built to last. First release: Cairno Docs for Confluence Cloud.",
+  },
 };
 
 const THEME_INIT_SCRIPT = `(function(){try{var m=document.cookie.match(/(?:^|; )cairno_theme=([^;]*)/);var t=m&&decodeURIComponent(m[1])==="dark"?"dark":"light";var r=document.documentElement;r.setAttribute("data-theme",t);if(t==="dark"){r.classList.add("dark");}else{r.classList.remove("dark");}r.style.colorScheme=t;}catch(e){}})();`;

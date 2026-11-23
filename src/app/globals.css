@@ -11,7 +11,7 @@
   --cairno-bg-surface: #ffffff;
   --cairno-bg-subtle: #efece4;
   --cairno-bg-code: #f2efe9;
-  --cairno-bg-nav: rgba(247, 245, 240, 0.86);
+  --cairno-bg-nav: rgba(247, 245, 240, 0.88);
 
   --cairno-border: #e3ded4;
   --cairno-border-strong: #cbc4b6;
@@ -44,7 +44,7 @@
   --cairno-bg-surface: #181b20;
   --cairno-bg-subtle: #20242b;
   --cairno-bg-code: #14171c;
-  --cairno-bg-nav: rgba(17, 19, 22, 0.86);
+  --cairno-bg-nav: rgba(17, 19, 22, 0.88);
 
   --cairno-border: #2a2f37;
   --cairno-border-strong: #3b424d;
@@ -71,17 +71,23 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
   background-color: var(--cairno-bg-canvas);
   color: var(--cairno-fg-primary);
 }
 
 body {
   margin: 0;
+  overflow-x: clip;
   background-color: var(--cairno-bg-canvas);
   color: var(--cairno-fg-primary);
   font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, sans-serif;
   transition: background-color 180ms ease, color 180ms ease;
   -webkit-font-smoothing: antialiased;
+}
+
+section[id] {
+  scroll-margin-top: 84px;
 }
 
 .cairno-dot-grid {
@@ -91,4 +97,129 @@ body {
 
 .cairno-mono {
   font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* Accessible link classes */
+.cairno-nav-link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--cairno-fg-secondary);
+  text-decoration: none;
+  border-radius: 6px;
+  transition: color 150ms ease;
+}
+
+.cairno-nav-link:hover {
+  color: var(--cairno-accent);
+}
+
+.cairno-nav-link:focus-visible,
+.cairno-inline-link:focus-visible,
+.cairno-cookie-btn:focus-visible {
+  outline: 2px solid var(--cairno-accent);
+  outline-offset: 2px;
+}
+
+.cairno-inline-link {
+  color: var(--cairno-accent);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: color 150ms ease, opacity 150ms ease;
+}
+
+.cairno-inline-link:hover {
+  color: var(--cairno-accent-hover);
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   Cookie Notice — Static CSS (immune to client-side Emotion style shifts)
+   ========================================================================== */
+.cairno-cookie-banner {
+  position: fixed;
+  z-index: 60;
+  left: 12px;
+  right: 12px;
+  bottom: max(12px, env(safe-area-inset-bottom));
+  margin-inline: auto;
+  width: calc(100% - 24px);
+  max-width: 420px;
+  box-sizing: border-box;
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid var(--cairno-border-strong);
+  background-color: var(--cairno-bg-surface);
+  color: var(--cairno-fg-primary);
+  box-shadow: var(--cairno-shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media (min-width: 768px) {
+  .cairno-cookie-banner {
+    left: auto;
+    right: 20px;
+    bottom: 20px;
+    margin-inline: 0;
+    width: 400px;
+  }
+}
+
+.cairno-cookie-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--cairno-accent);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  line-height: 1.3;
+}
+
+.cairno-cookie-body {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--cairno-fg-secondary);
+}
+
+.cairno-cookie-code {
+  padding: 1px 5px;
+  border-radius: 4px;
+  background-color: var(--cairno-bg-subtle);
+  color: var(--cairno-fg-primary);
+  font-size: 11.5px;
+}
+
+.cairno-cookie-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 4px;
+}
+
+.cairno-cookie-actions--end {
+  justify-content: flex-end;
+}
+
+.cairno-cookie-btn {
+  appearance: none;
+  border: 0;
+  border-radius: 9999px;
+  padding: 7px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  background-color: var(--cairno-accent);
+  color: var(--cairno-accent-fg);
+  transition: background-color 150ms ease;
+}
+
+.cairno-cookie-btn:hover {
+  background-color: var(--cairno-accent-hover);
 }

@@ -4,8 +4,6 @@ import { Box, Container, Flex, HStack, Text } from "@chakra-ui/react";
 import { CairnLogo } from "@/components/CairnLogo";
 
 export function Footer() {
-  const year = new Date().getFullYear();
-
   return (
     <Box
       as="footer"
@@ -36,25 +34,26 @@ export function Footer() {
           </Box>
 
           <Flex direction="column" align={{ base: "flex-start", md: "flex-end" }} gap={2}>
-            <HStack gap={5} wrap="wrap" fontSize="xs" fontWeight="600">
-              <Link href="/privacy/" style={{ color: "var(--cairno-fg-secondary)", textDecoration: "none" }}>
+            <HStack gap={5} wrap="wrap" fontSize="xs">
+              <Link href="/privacy/" className="cairno-nav-link" style={{ fontSize: "0.75rem", fontWeight: 600 }}>
                 Privacy Policy
               </Link>
-              <Link href="/terms/" style={{ color: "var(--cairno-fg-secondary)", textDecoration: "none" }}>
+              <Link href="/terms/" className="cairno-nav-link" style={{ fontSize: "0.75rem", fontWeight: 600 }}>
                 Terms of Service
               </Link>
-              <Link href="/security/" style={{ color: "var(--cairno-fg-secondary)", textDecoration: "none" }}>
+              <Link href="/security/" className="cairno-nav-link" style={{ fontSize: "0.75rem", fontWeight: 600 }}>
                 Security &amp; Zero-Egress
               </Link>
               <a
                 href="mailto:support@cairnolabs.com"
-                style={{ color: "var(--cairno-accent)", textDecoration: "none" }}
+                className="cairno-inline-link"
+                style={{ fontSize: "0.75rem" }}
               >
                 support@cairnolabs.com
               </a>
             </HStack>
             <Text className="cairno-mono" fontSize="11px" color="var(--cairno-fg-muted)">
-              © {year} Cairno Labs · cairnolabs.com
+              © 2026 Cairno Labs · cairnolabs.com
             </Text>
           </Flex>
         </Flex>

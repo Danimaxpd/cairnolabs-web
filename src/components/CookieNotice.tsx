@@ -2,12 +2,14 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { Box, Button, Flex, HStack, Text } from "@chakra-ui/react";
+import { usePathname } from "next/navigation";
 import { ShieldCheck } from "lucide-react";
 import { getCookie, NOTICE_COOKIE_NAME, setFunctionalCookie } from "@/lib/cookies";
 
 export function CookieNotice() {
   const [visible, setVisible] = useState(false);
+  const pathname = usePathname();
+  const isPrivacyPage = pathname === "/privacy" || pathname === "/privacy/";
 
   useEffect(() => {
     const acknowledged = getCookie(NOTICE_COOKIE_NAME);
@@ -24,63 +26,35 @@ export function CookieNotice() {
   };
 
   return (
-    <Box
-      role="region"
-      aria-label="Cookie notice"
-      position="fixed"
-      bottom={{ base: 3, md: 5 }}
-      right={{ base: 3, md: 5 }}
-      left={{ base: 3, md: "auto" }}
-      maxW="420px"
-      zIndex={50}
-      p={4}
-      borderRadius="14px"
-      border="1px solid"
-      borderColor="var(--cairno-border-strong)"
-      bg="var(--cairno-bg-surface)"
-      boxShadow="var(--cairno-shadow-card)"
-    >
-      <Flex direction="column" gap={2.5}>
-        <HStack gap={2} color="var(--cairno-accent)">
-          <ShieldCheck size={16} />
-          <Text fontSize="xs" fontWeight="700" textTransform="uppercase" letterSpacing="0.06em" className="cairno-mono">
-            Functional Cookie Only · Zero Tracking
-          </Text>
-        </HStack>
+    <aside role="region" aria-label="Cookie notice" className="cairno-cookie-banner">
+      <div className="cairno-cookie-header cairno-mono">
+        <ShieldCheck size={15} style={{ flexShrink: 0 }} aria-hidden="true" />
+        <span>Functional Cookie Only · Zero Tracking</span>
+      </div>
 
-        <Text fontSize="xs" lineHeight="1.6" color="var(--cairno-fg-secondary)">
-          We store a single functional cookie ({" "}
-          <Box as="code" className="cairno-mono" color="var(--cairno-fg-primary)">
-            cairno_theme
-          </Box>{" "}
-          ) solely to remember your light or dark appearance preference. No analytics, no ad pixels, and no third-party tracking.
-        </Text>
+      <p className="cairno-cookie-body">
+        We store a single functional cookie (
+        <code className="cairno-mono cairno-cookie-code">cairno_theme</code>) solely to remember
+        your light or dark appearance preference. No analytics, no ad pixels, and no third-party
+        tracking.
+      </p>
 
-        <Flex align="center" justify="space-between" pt={1}>
-          <Link
-            href="/privacy/"
-            style={{
-              fontSize: "0.75rem",
-              fontWeight: 600,
-              color: "var(--cairno-accent)",
-              textDecoration: "underline",
-            }}
-          >
+      <div
+        className={
+          isPrivacyPage
+            ? "cairno-cookie-actions cairno-cookie-actions--end"
+            : "cairno-cookie-actions"
+        }
+      >
+        {!isPrivacyPage && (
+          <Link href="/privacy/" className="cairno-inline-link" style={{ fontSize: "12px" }}>
             Privacy Policy
           </Link>
-          <Button
-            size="xs"
-            borderRadius="full"
-            px={4}
-            onClick={handleDismiss}
-            bg="var(--cairno-accent)"
-            color="var(--cairno-accent-fg)"
-            _hover={{ bg: "var(--cairno-accent-hover)" }}
-          >
-            Got it
-          </Button>
-        </Flex>
-      </Flex>
-    </Box>
+        )}
+        <button type="button" onClick={handleDismiss} className="cairno-cookie-btn">
+          Got it
+        </button>
+      </div>
+    </aside>
   );
 }

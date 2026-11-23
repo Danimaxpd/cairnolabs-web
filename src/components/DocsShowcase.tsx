@@ -134,6 +134,7 @@ export function DocsShowcase() {
       <Grid templateColumns={{ base: "1fr", md: "1fr 1fr" }}>
         {/* Source Pane */}
         <Box
+          minW={0}
           p={{ base: 4, md: 6 }}
           bg="var(--cairno-bg-code)"
           borderRight={{ base: "none", md: "1px solid" }}
@@ -161,6 +162,7 @@ export function DocsShowcase() {
             lineHeight="1.65"
             color="var(--cairno-fg-secondary)"
             overflowX="auto"
+            maxW="100%"
             m={0}
           >
             {CODE_SNIPPETS[mode]}
@@ -168,7 +170,7 @@ export function DocsShowcase() {
         </Box>
 
         {/* Rendered Preview Pane */}
-        <Box p={{ base: 4, md: 6 }} bg="var(--cairno-bg-surface)">
+        <Box minW={0} p={{ base: 4, md: 6 }} bg="var(--cairno-bg-surface)">
           <Flex justify="space-between" align="center" mb={4}>
             <Text
               className="cairno-mono"
