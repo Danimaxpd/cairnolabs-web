@@ -1,0 +1,94 @@
+/* ==========================================================================
+   Cairno Labs — "Nordic Limestone & Volcanic Basalt" CSS Custom Properties
+   Default: Light Mode (Warm Limestone)
+   Toggle:  :root[data-theme="dark"] / :root.dark (Volcanic Basalt)
+   ========================================================================== */
+
+:root {
+  color-scheme: light;
+
+  --cairno-bg-canvas: #f7f5f0;
+  --cairno-bg-surface: #ffffff;
+  --cairno-bg-subtle: #efece4;
+  --cairno-bg-code: #f2efe9;
+  --cairno-bg-nav: rgba(247, 245, 240, 0.86);
+
+  --cairno-border: #e3ded4;
+  --cairno-border-strong: #cbc4b6;
+
+  --cairno-fg-primary: #16191d;
+  --cairno-fg-secondary: #343a42;
+  --cairno-fg-muted: #5a616b;
+
+  --cairno-accent: #1f4e5f;
+  --cairno-accent-hover: #163b48;
+  --cairno-accent-fg: #ffffff;
+  --cairno-accent-soft: rgba(31, 78, 95, 0.1);
+
+  --cairno-ochre: #c26d3b;
+  --cairno-ochre-soft: rgba(194, 109, 59, 0.12);
+
+  --cairno-stone-base: #16191d;
+  --cairno-stone-mid: #1f4e5f;
+  --cairno-stone-top: #c26d3b;
+
+  --cairno-grid-dot: rgba(22, 25, 29, 0.08);
+  --cairno-shadow-card: 0 1px 2px rgba(22, 25, 29, 0.05), 0 12px 32px -12px rgba(22, 25, 29, 0.08);
+}
+
+:root[data-theme="dark"],
+:root.dark {
+  color-scheme: dark;
+
+  --cairno-bg-canvas: #111316;
+  --cairno-bg-surface: #181b20;
+  --cairno-bg-subtle: #20242b;
+  --cairno-bg-code: #14171c;
+  --cairno-bg-nav: rgba(17, 19, 22, 0.86);
+
+  --cairno-border: #2a2f37;
+  --cairno-border-strong: #3b424d;
+
+  --cairno-fg-primary: #f3f1ec;
+  --cairno-fg-secondary: #d4d7dc;
+  --cairno-fg-muted: #98a0aa;
+
+  --cairno-accent: #58a4b8;
+  --cairno-accent-hover: #73b8ca;
+  --cairno-accent-fg: #0d1417;
+  --cairno-accent-soft: rgba(88, 164, 184, 0.15);
+
+  --cairno-ochre: #e08b58;
+  --cairno-ochre-soft: rgba(224, 139, 88, 0.16);
+
+  --cairno-stone-base: #e7e4dc;
+  --cairno-stone-mid: #58a4b8;
+  --cairno-stone-top: #e08b58;
+
+  --cairno-grid-dot: rgba(243, 241, 236, 0.07);
+  --cairno-shadow-card: 0 1px 2px rgba(0, 0, 0, 0.35), 0 18px 38px -14px rgba(0, 0, 0, 0.55);
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--cairno-bg-canvas);
+  color: var(--cairno-fg-primary);
+}
+
+body {
+  margin: 0;
+  background-color: var(--cairno-bg-canvas);
+  color: var(--cairno-fg-primary);
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, sans-serif;
+  transition: background-color 180ms ease, color 180ms ease;
+  -webkit-font-smoothing: antialiased;
+}
+
+.cairno-dot-grid {
+  background-image: radial-gradient(var(--cairno-grid-dot) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.cairno-mono {
+  font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+}

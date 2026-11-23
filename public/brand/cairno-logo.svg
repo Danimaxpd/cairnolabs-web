@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="Cairno Labs mark">
+  <!-- Base basalt plinth bar -->
+  <path d="M8 43H56V50L50 56H18L8 46V43Z" fill="var(--cairno-stone-base, #16191D)" />
+  <!-- Mid fjord-teal architectural spine and upper arch -->
+  <path d="M8 18L18 8H39V21H25L21 25V39H8V18Z" fill="var(--cairno-stone-mid, #1F4E5F)" />
+  <!-- Top alpine ochre apex capstone -->
+  <path d="M43 8H50L56 14V21H43V8Z" fill="var(--cairno-stone-top, #C26D3B)" />
+</svg>

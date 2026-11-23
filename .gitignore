@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.*
+
+# Next.js build & static export
+.next/
+out/
+build/
+
+# Environment
+.env
+.env.*
+
+# Logs & OS
+npm-debug.log*
+.DS_Store
+*.tsbuildinfo
+next-env.d.ts
