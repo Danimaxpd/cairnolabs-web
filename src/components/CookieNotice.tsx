@@ -29,14 +29,15 @@ export function CookieNotice() {
     <aside role="region" aria-label="Cookie notice" className="cairno-cookie-banner">
       <div className="cairno-cookie-header cairno-mono">
         <ShieldCheck size={15} style={{ flexShrink: 0 }} aria-hidden="true" />
-        <span>Functional Cookie Only · Zero Tracking</span>
+        <span>Functional Cookies Only · Zero Tracking</span>
       </div>
 
       <p className="cairno-cookie-body">
-        We store a single functional cookie (
-        <code className="cairno-mono cairno-cookie-code">cairno_theme</code>) solely to remember
-        your light or dark appearance preference. No analytics, no ad pixels, and no third-party
-        tracking.
+        We store two strictly functional first-party cookies:{" "}
+        <code className="cairno-mono cairno-cookie-code">cairno_theme</code> for your light or
+        dark appearance preference, and{" "}
+        <code className="cairno-mono cairno-cookie-code">cairno_notice_ack</code> to remember
+        dismissing this banner. No analytics, no ad pixels, and no third-party tracking.
       </p>
 
       <div

@@ -58,7 +58,7 @@ export default function SecurityPage() {
         <Text>
           If you discover a potential security issue in any Cairno Labs product or website, please
           report it responsibly to{" "}
-          <a href="mailto:security@cairnolabs.com" style={{ color: "var(--cairno-accent)" }}>
+          <a href="mailto:security@cairnolabs.com" className="cairno-inline-link">
             security@cairnolabs.com
           </a>
           .

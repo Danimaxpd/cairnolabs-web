@@ -44,8 +44,8 @@ export default function HomePage() {
             <Badge
               className="cairno-mono"
               px={3}
-              py={1}
-              borderRadius="full"
+              py={1.5}
+              borderRadius={{ base: "12px", sm: "full" }}
               border="1px solid"
               borderColor="var(--cairno-border-strong)"
               bg="var(--cairno-bg-surface)"
@@ -53,6 +53,10 @@ export default function HomePage() {
               fontSize="11px"
               fontWeight="600"
               letterSpacing="0.06em"
+              whiteSpace="normal"
+              maxW="100%"
+              lineHeight="1.45"
+              textAlign="left"
             >
               INDEPENDENT B2B SOFTWARE STUDIO · ZERO-EGRESS BY DEFAULT
             </Badge>
@@ -190,6 +194,10 @@ export default function HomePage() {
                 color="var(--cairno-accent)"
                 fontSize="xs"
                 fontWeight="600"
+                whiteSpace="normal"
+                maxW="100%"
+                lineHeight="1.4"
+                textAlign="left"
               >
                 Coming to Atlassian Marketplace
               </Badge>
@@ -360,7 +368,7 @@ export default function HomePage() {
               bg="var(--cairno-bg-surface)"
               boxShadow="var(--cairno-shadow-card)"
             >
-              <Flex justify="space-between" align="center" mb={1}>
+              <Flex justify="space-between" align="center" wrap="wrap" gap={2} mb={1}>
                 <Text className="cairno-mono" fontSize="xs" color="var(--cairno-accent)" fontWeight="700">
                   TEAM &amp; ENTERPRISE · 11+ USERS
                 </Text>
@@ -372,6 +380,8 @@ export default function HomePage() {
                   bg="var(--cairno-ochre-soft)"
                   color="var(--cairno-ochre)"
                   fontSize="10px"
+                  whiteSpace="normal"
+                  maxW="100%"
                 >
                   30-DAY FREE TRIAL
                 </Badge>

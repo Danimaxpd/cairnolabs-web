@@ -52,7 +52,7 @@ export default function PrivacyPage() {
         <Text>
           Subscriptions, invoicing, and tax compliance are processed exclusively by{" "}
           <strong>Atlassian Marketplace</strong>. When you contact{" "}
-          <a href="mailto:support@cairnolabs.com" style={{ color: "var(--cairno-accent)" }}>
+          <a href="mailto:support@cairnolabs.com" className="cairno-inline-link">
             support@cairnolabs.com
           </a>
           , we use your email solely to respond to your inquiry and never sell or share contact
@@ -66,7 +66,7 @@ export default function PrivacyPage() {
         </Heading>
         <Text>
           To request deletion of any support correspondence or ask privacy questions, email{" "}
-          <a href="mailto:security@cairnolabs.com" style={{ color: "var(--cairno-accent)" }}>
+          <a href="mailto:security@cairnolabs.com" className="cairno-inline-link">
             security@cairnolabs.com
           </a>
           .

@@ -41,7 +41,7 @@ export default function TermsPage() {
         <Text>
           Applications hosted on Atlassian Forge inherit Atlassian Cloud&apos;s platform
           availability. Cairno Labs provides asynchronous email support via{" "}
-          <a href="mailto:support@cairnolabs.com" style={{ color: "var(--cairno-accent)" }}>
+          <a href="mailto:support@cairnolabs.com" className="cairno-inline-link">
             support@cairnolabs.com
           </a>{" "}
           with target responses within one business day.
