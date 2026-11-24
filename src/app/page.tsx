@@ -15,6 +15,7 @@ import {
 import {
   ArrowRight,
   Check,
+  ExternalLink,
   Layers,
   Lock,
   Mail,
@@ -25,6 +26,9 @@ import {
 import { Navbar } from "@/components/Navbar";
 import { DocsShowcase } from "@/components/DocsShowcase";
 import { Footer } from "@/components/Footer";
+
+const MARKETPLACE_URL =
+  "https://marketplace.atlassian.com/search?query=Cairno%20Docs";
 
 export default function HomePage() {
   return (
@@ -199,7 +203,7 @@ export default function HomePage() {
                 lineHeight="1.4"
                 textAlign="left"
               >
-                Coming to Atlassian Marketplace
+                Runs on Atlassian · Built on Forge
               </Badge>
             </Flex>
 
@@ -345,7 +349,12 @@ export default function HomePage() {
                   </HStack>
                 ))}
               </VStack>
-              <a href="mailto:support@cairnolabs.com?subject=Cairno%20Docs%20Early%20Access" style={{ textDecoration: "none" }}>
+              <a
+                href={MARKETPLACE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: "none" }}
+              >
                 <Button
                   w="100%"
                   variant="outline"
@@ -354,7 +363,10 @@ export default function HomePage() {
                   color="var(--cairno-fg-primary)"
                   _hover={{ bg: "var(--cairno-bg-subtle)" }}
                 >
-                  Request Early Access
+                  <HStack gap={2}>
+                    <Text>Install Free on Marketplace</Text>
+                    <ExternalLink size={14} />
+                  </HStack>
                 </Button>
               </a>
             </Box>
@@ -398,7 +410,7 @@ export default function HomePage() {
                 {[
                   "~$55/mo for 100 users (over 50% less than legacy suites)",
                   "Everything in Starter, unlimited pages & macros",
-                  "Native Atlassian Marketplace billing & progressive volume tiers",
+                  "Native Atlassian Marketplace billing + read-only grace mode",
                   "Direct asynchronous engineering support (<24h business days)",
                 ].map((item) => (
                   <HStack key={item} gap={2.5} align="flex-start">
@@ -409,7 +421,12 @@ export default function HomePage() {
                   </HStack>
                 ))}
               </VStack>
-              <a href="mailto:support@cairnolabs.com?subject=Cairno%20Docs%20Team%20Waitlist" style={{ textDecoration: "none" }}>
+              <a
+                href={MARKETPLACE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: "none" }}
+              >
                 <Button
                   w="100%"
                   borderRadius="10px"
@@ -419,7 +436,8 @@ export default function HomePage() {
                 >
                   <HStack gap={2}>
                     <Sparkles size={15} />
-                    <Text>Join Marketplace Launch List</Text>
+                    <Text>Start 30-Day Free Trial on Marketplace</Text>
+                    <ExternalLink size={14} />
                   </HStack>
                 </Button>
               </a>
