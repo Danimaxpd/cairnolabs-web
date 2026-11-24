@@ -38,6 +38,9 @@ export function Footer() {
               <Link href="/privacy/" className="cairno-nav-link" style={{ fontSize: "0.75rem", fontWeight: 600 }}>
                 Privacy Policy
               </Link>
+              <Link href="/dpa/" className="cairno-nav-link" style={{ fontSize: "0.75rem", fontWeight: 600 }}>
+                DPA
+              </Link>
               <Link href="/terms/" className="cairno-nav-link" style={{ fontSize: "0.75rem", fontWeight: 600 }}>
                 Terms of Service
               </Link>
