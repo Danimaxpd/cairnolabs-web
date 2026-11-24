@@ -44,6 +44,9 @@ export function Footer() {
               <Link href="/security/" className="cairno-nav-link" style={{ fontSize: "0.75rem", fontWeight: 600 }}>
                 Security &amp; Zero-Egress
               </Link>
+              <Link href="/sla/" className="cairno-nav-link" style={{ fontSize: "0.75rem", fontWeight: 600 }}>
+                Support SLA
+              </Link>
               <a
                 href="mailto:support@cairnolabs.com"
                 className="cairno-inline-link"
