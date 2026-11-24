@@ -22,15 +22,12 @@ export default function SlaPage() {
         </Heading>
         <Text>
           This Service Level Agreement applies to all paid Atlassian Marketplace Cloud applications
-          published by <strong>Cairno Labs</strong>. Support is provided asynchronously via email at{" "}
+          published by <strong>Cairno Labs</strong>. Support (including security and privacy
+          reports) is provided asynchronously via email at{" "}
           <a href="mailto:support@cairnolabs.com" className="cairno-inline-link">
             support@cairnolabs.com
-          </a>{" "}
-          (and{" "}
-          <a href="mailto:security@cairnolabs.com" className="cairno-inline-link">
-            security@cairnolabs.com
-          </a>{" "}
-          for security reports).
+          </a>
+          .
         </Text>
       </Box>
 

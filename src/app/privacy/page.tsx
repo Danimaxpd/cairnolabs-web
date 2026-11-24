@@ -66,8 +66,8 @@ export default function PrivacyPage() {
         </Heading>
         <Text>
           To request deletion of any support correspondence or ask privacy questions, email{" "}
-          <a href="mailto:security@cairnolabs.com" className="cairno-inline-link">
-            security@cairnolabs.com
+          <a href="mailto:support@cairnolabs.com" className="cairno-inline-link">
+            support@cairnolabs.com
           </a>
           .
         </Text>

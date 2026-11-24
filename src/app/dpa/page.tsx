@@ -153,8 +153,8 @@ export default function DpaPage() {
           This DPA applies automatically to all Customers using Cairno Labs Forge applications on
           Atlassian Marketplace. To request a countersigned copy or submit privacy and compliance
           inquiries, contact{" "}
-          <a href="mailto:security@cairnolabs.com" className="cairno-inline-link">
-            security@cairnolabs.com
+          <a href="mailto:support@cairnolabs.com" className="cairno-inline-link">
+            support@cairnolabs.com
           </a>
           .
         </Text>
